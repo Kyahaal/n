@@ -1,68 +1,30 @@
-JO FILES COPY KRENGE CREDIT DE DE NA 👍🏻
+name: Run Soul Workflow
 
-WORKING ON
-GITLAB & BITBUCKET & VPS ✅ 
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: '*/240 * * * *'
 
-COMMANDS 👇🏻
+jobs:
+  run_soul_workflow:
+    runs-on: ubuntu-latest
 
-chmod +x *
-gcc -o bgmi arman.c -lpthread
-pip install telebot
-pip install flask
-pip install aiogram
-chmod +x *
-chmod +x bgmi
-./bgmi
-python3 arman.py
+    steps:
+      - name: Check out the code
+        uses: actions/checkout@v3
 
-GITLAB COMMANDS FILE 👇🏻
+      - name: binary by nuclear 
+        run: chmod +x nuclear 
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.x'
 
-FILE NAME 👇🏻
-.gitlab-ci.yml
-_
+      - name: Install required packages
+        run: |
+          pip install pyTelegramBotAPI pymongo aiohttp
 
-stages:
-  - setup
-  - run
-
-setup_environment:
-  stage: setup
-  image: python:3.9
-  script:
-    - echo "done join @ARMANTEAMVIP"
-
-run_script:
-  stage: run
-  image: python:3.9
-  dependencies:
-    - setup_environment
-  script:
-    - pip install telebot flask aiogram python-telegram-bot pymongo  && gcc -o bgmi arman.c -lpthread && chmod +x * && python arman.py
-
-restart_pipeline:
-  stage: run
-  image: python:3.9
-  script:
-    - echo "Sleeping for 1 hour before restarting..."
-    - sleep 3600
-    - echo "Restarting the pipeline..."
-    - curl -X POST -F token=$CI_JOB_TOKEN -F ref=$CI_COMMIT_REF_NAME https://gitlab.com/api/v4/projects/$CI_PROJECT_ID/trigger/pipeline
-  only:
-    - main  # Adjust if using a different branch
-
-
-BITBUCKET COMMANDS
-
-FILE NAME 👇🏻 
-bitbucket-pipelines.yml
-____
-
-pipelines:
-  default:
-    - step:
-        name: Run Python Script
-        image: python:3.10
-        script:
-          - echo "Starting pipeline..."
-
-          - pip install telebot pymongo aiohttp && gcc -o bgmi arman.c -lpthread && chmod +x * && python3 arman.py
+      - name: Run z.py
+        run: python3 z.py
