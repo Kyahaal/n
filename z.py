@@ -14,17 +14,17 @@ from telebot import types
 import sys
 
 # insert your Telegram bot token here
-bot = telebot.TeleBot('7459360826:AAGIc-UgqevEL2dx012DAUT0_RRvkG-HXPw')
+bot = telebot.TeleBot('7249644400:AAEZQiRq5FtL3E6DnRzKlFgdagqFvTxwKnI')
 
-API_TOKEN = '7459360826:AAGIc-UgqevEL2dx012DAUT0_RRvkG-HXPw'  # Replace with your bot's API token
+API_TOKEN = '7249644400:AAEZQiRq5FtL3E6DnRzKlFgdagqFvTxwKnI'  # Replace with your bot's API token
 bot = telebot.TeleBot(API_TOKEN)
 
 # Define the owner's user ID
-OWNER_ID = 5952273489  # Replace with your actual Telegram user ID
+OWNER_ID = 6077036964  # Replace with your actual Telegram user ID
 # Admin user IDs
-admin_id = ["5952273489"]
+admin_id = ["6077036964"]
 # Replace with your actual admin user IDs
-ADMIN_IDS = [5952273489]  # Example admin user ID
+ADMIN_IDS = [6077036964]  # Example admin user ID
 
 # File to store allowed user IDs
 USER_FILE = "users.txt"
@@ -65,7 +65,7 @@ allowed_user_ids = read_users()
 
 # Function to log command to the file
 def log_command(user_id, target, port, time):
-    admin_id = ["5952273489"]
+    admin_id = ["6077036964"]
     user_info = bot.get_chat(user_id)
     if user_info.username:
         username = "@" + user_info.username
